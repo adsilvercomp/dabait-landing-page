@@ -46,6 +46,7 @@
       --pink: #FF628C;
       --black: #000000;
       --white: #ffffff;
+      --blue: #00FFD4;
     }
 
     html, body {
@@ -65,13 +66,24 @@
     /* HEADER */
     header {
       padding: 24px 32px;
+      display: flex;
+    }
+
+    .logo-container{
+      display:flex;
+      align-items: center;
+      flex-direction: column;
     }
 
     .logo {
-      font-size: 40px;
+      font-size: 34px;
       font-weight: 720;
       color: var(--pink);
-      /* letter-spacing: -0.5px; */
+    }
+
+    .logo-icon {
+      height: 80px;
+      width: auto;
     }
 
     /* MAIN */
@@ -81,7 +93,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 40px 24px;
+      /* padding: 40px 24px; */
       position: relative;
     }
 
@@ -108,7 +120,7 @@
 
     .cta-button {
       display: block;
-      width: 280px;
+      width: 320px;
       cursor: pointer !important;
       text-decoration: none;
       animation: pulse 2s ease-in-out infinite;
@@ -126,6 +138,7 @@
     .cta-button:hover {
       transform: scale(1.04);
       filter: brightness(1.05);
+      color: var(--blue)
     }
 
     .cta-button:active {
@@ -174,6 +187,7 @@
       header {
         text-align: center;
         padding: 20px 16px;
+        justify-content: center;
       }
 
       main {
@@ -212,12 +226,18 @@
 <body>
 
   <header>
-    <h1 class="logo" aria-label="Da'bait">Da<span style="font-style: italic; margin-left: -4px; letter-spacing: 7px">'</span>bait</h1>
+    <div class="logo-container">
+        <img src="solid_logo.svg" alt="" class="logo-icon" aria-hidden="true" />
+        <h1 class="logo" aria-label="Da'bait">
+          Da<span style="font-style: italic; margin-left: -4px; letter-spacing: 7px">'</span>bait
+        </h1>
+    </div>
+    
     
   </header>
 
   <main>
-    <h2 class="headline">The Chaos Club</h2>
+    
     <div style="width: 100%; max-width: 340px; margin: 0 auto 32px auto; border-radius: 12px; overflow: hidden;">
     <div style="position: relative; padding-bottom: 177.78%; height: 0;">
       <iframe
@@ -228,8 +248,8 @@
       </iframe>
     </div>
     </div>
-
-    <a class="cta-button" id="cta-link" href="#">Are You Chaotic Enough?</a>
+    <a class="cta-button" id="cta-link" href="#">Submit Your Skit!</a>
+    
   </main>
 
   <footer>
@@ -274,7 +294,7 @@
       cta.style.opacity = '0.5';
 
       const msg = document.createElement('p');
-      msg.textContent = "You're on the list! We'll be in touch 🎉";
+      msg.textContent = "If we like what we see, we'll be in touch 🎉";
       msg.style.color = '#FF628C';
       msg.style.fontWeight = '600';
       msg.style.marginTop = '16px';
